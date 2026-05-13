@@ -60,7 +60,7 @@ public class AiClient {
             json = mapper.writeValueAsString(body);
         } catch (Exception e) {
             log.error("Failed to serialize AI request: {}", e.getMessage());
-            return new AiGenerateResult(List.of(), "request serialization failed");
+            return new AiGenerateResult(List.of(), "request serialization failed.");
         }
 
         HttpHeaders headers = new HttpHeaders();

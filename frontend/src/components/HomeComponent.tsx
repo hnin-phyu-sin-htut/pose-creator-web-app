@@ -269,8 +269,9 @@ export default function HomeComponent() {
                             </div>
 
                             <p className="text-sm text-slate-400 leading-relaxed">
-                                Generate cinematic AI visuals with custom
-                                styles, reference images, and multiple outputs.
+                                Type a simple idea, pick a style, choose how
+                                many images, and optionally upload a background
+                                reference image to match the setting.
                             </p>
                         </div>
                     </div>
@@ -319,9 +320,10 @@ export default function HomeComponent() {
                                     </h1>
 
                                     <p className="mt-4 text-slate-400 leading-relaxed text-sm md:text-base">
-                                        Describe your imagination and transform
-                                        it into stunning visuals using advanced
-                                        AI generation.
+                                        Just type a simple idea like{" "}
+                                        <span className="text-cyan-300 italic">"pose idea for a couple"</span>{" "}
+                                        - pick your style and count, then hit Generate.
+                                        Upload a background image to keep the same setting in your results.
                                     </p>
                                 </div>
                             </div>
@@ -372,7 +374,7 @@ export default function HomeComponent() {
 
                                             {m.count && (
                                                 <span className="px-3 py-1 rounded-full bg-black/20 text-xs">
-                                                    {m.count} image
+                                                    {m.count === 1 ? m.count + "Image" : m.count + " Images"}
                                                 </span>
                                             )}
                                         </div>
@@ -522,6 +524,7 @@ export default function HomeComponent() {
                             className="rounded-[24px] border border-white/10 bg-white/5 p-2 sm:p-3 flex items-end gap-2 w-full">
                             <button
                                 onClick={() => fileRef.current?.click()}
+                                title="Upload background image"
                                 className="h-12 w-12 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center transition shrink-0"
                             >
                                 <Paperclip size={18}/>
@@ -530,7 +533,7 @@ export default function HomeComponent() {
                             <textarea
                                 value={prompt}
                                 onChange={(e) => setPrompt(e.target.value)}
-                                placeholder="Describe your imagination..."
+                                placeholder="e.g. pose idea for a couple, romantic sunset scene..."
                                 rows={1}
                                 className="flex-1 min-w-0 bg-transparent resize-none outline-none text-sm max-h-40 py-3 overflow-y-auto"
                             />
@@ -566,4 +569,3 @@ function Logo() {
         </div>
     );
 }
-
