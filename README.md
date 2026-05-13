@@ -8,7 +8,9 @@ An AI-powered web application that generates creative pose and character images 
 
 *Backend: Spring Boot + JWT Authentication + PostgreSQL*
 
-*AI Service: FastAPI + Hugging Face Inference API*
+*AI Service: FastAPI + Pollinations AI API + Python + Uvicorn*
+
+*Image Model: Flux-Realism (via Pollinations AI)*
 
 ## Features
 
@@ -19,7 +21,7 @@ An AI-powered web application that generates creative pose and character images 
 - Fast React frontend with Vite
 - PostgreSQL database integration
 - Separate AI microservice using FastAPI
-- Hugging Face FLUX model integration
+- Pollinations AI integration using Flux-Realism model
 
 ## Tech Stack
 
@@ -44,7 +46,7 @@ An AI-powered web application that generates creative pose and character images 
 ### AI Service
 
 - FastAPI
-- Hugging Face Inference API
+- Pollinations AI API
 - Python
 - Uvicorn
 
@@ -70,12 +72,6 @@ psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE pose_db TO pose;"
 - python -m venv .venv
 
 - pip install -r requirements.txt
-
-## Create .env
-
-HF_TOKEN=your_huggingface_token
-
-HF_MODEL=black-forest-labs/FLUX.1-schnell
 
 ## Author
 
